@@ -2,7 +2,8 @@ const data = [{
     title: "Bahamas",
     url_img: "https://images.pexels.com/photos/9408823/pexels-photo-9408823.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     desc: "Welcome to Bahamas! Enjoy your time"
-}, {
+}, 
+{
     title: "Costa Rica",
     desc: "Welcome to Costa Rica! enjoy your trip",
     url_img: "https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/CostaRica_RioCeleste_PNVolcanTenorio_500px_61764629_Kryssia%20Campos_500px_0.jpg?itok=fG8pBD1W"
