@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TravelCard(props) {
+function TravelItem(props) {
   return (
     <article>
       <h5>{props.title}</h5>
@@ -16,4 +16,4 @@ function TravelCard(props) {
   )
 } // El hijo puede modificar el estado del padre pero solo mediante funciones
 
-export default TravelCard
+export default TravelItem

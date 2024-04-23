@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import TravelCard from './TravelCard';
+import React, { useState, useRef } from 'react';
+import TravelItem from './TravelItem';
 import data from './data';
 
 function TravelList() {
@@ -10,9 +10,11 @@ function TravelList() {
         title: "",
         desc: "",
         url_img: ""
-    })
+    });
 
-    const paintCards = () => list.map((item, index) => <TravelCard
+    const titleRef = useRef();
+
+    const paintCards = () => list.map((item, index) => <TravelItem
         key={index}
         title={item.title}
         desc={item.desc}
@@ -25,12 +27,12 @@ function TravelList() {
     const resetCards = () => setList(data);
 
     const createCard = () => {
-        alert("Crear destino nuevo")
+        alert("Crear destino nuevo");
         const title = prompt("Introduce tu destino");
         const desc = prompt("Introduce la descripción del destino");
         const url_img = prompt("Introduce la url de la imagen");
 
-        const card = { title, desc, url_img }
+        const card = { title, desc, url_img };
 
         setList([...list, card]); //La documentación dice que para modificar un estado mejor no tirar de .push o .shift, hacerlo con el propio setter
     };
@@ -49,6 +51,10 @@ function TravelList() {
 
         const item = { title, desc, url_img }; // Nuevo objeto destino
         setList([...list, item]); // Añade el nuevo destino a la lista
+        //Probando ref
+        console.log(titleRef.current.value);
+        titleRef.current.value = "";
+        console.log(titleRef.current.value);
     };  
 
     const handleChange = (e) => {
@@ -56,7 +62,7 @@ function TravelList() {
             ...values,
             [e.target.name]: e.target.value
         })
-    }
+    };
 
     // Funciones entre llaves dentro de los return
     return (
@@ -80,7 +86,7 @@ function TravelList() {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Título</label>
                 <br />
-                <input type="text" name="title" onChange={handleChange}/>
+                <input type="text" name="title" ref={titleRef} onChange={handleChange}/>
                 <br />
 
                 <label htmlFor="price">Descripción</label>
