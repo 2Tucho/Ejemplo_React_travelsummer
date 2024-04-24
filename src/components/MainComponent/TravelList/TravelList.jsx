@@ -19,7 +19,7 @@ function TravelList() {
         title={item.title}
         desc={item.desc}
         url_img={item.url_img}
-        delete={() => deleteCard(index)} // Puedo pasar funciones por props
+        deleteItem={() => deleteItem(index)} // Puedo pasar funciones por props
     />);
 
     const clearCards = () => setList([]);
