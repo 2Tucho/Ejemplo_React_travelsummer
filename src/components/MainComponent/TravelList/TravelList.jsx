@@ -37,7 +37,7 @@ function TravelList() {
         setList([...list, card]); //La documentación dice que para modificar un estado mejor no tirar de .push o .shift, hacerlo con el propio setter
     };
 
-    const deleteCard = (pos) => {
+    const deleteItem = (pos) => {
         alert("Borrar destino");
         const remainingCards = list.filter((item, index) => index !== pos);
         setList(remainingCards); // Modifica el estado con las cards que quedan

@@ -5,14 +5,14 @@ App --> App.jsx
         Nav
             Link*3
             LogButton
-        MainComponent
-            TravelList --> Travel.jsx <section>
-                TravelCard --> TravelCard.jsx <article>
-                TravelCard
-                TravelCard
-            SideInfo --> SideInfo.jsx --> <aside>
-                SideCard --> SideCard.jsx --> <article>
-                SideCard
-                SideCard
+    MainComponent
+        TravelList --> Travel.jsx <section>
+            TravelCard --> TravelCard.jsx <article>
+            TravelCard
+            TravelCard
+        SideInfo --> SideInfo.jsx --> <aside>
+            SideCard --> SideCard.jsx --> <article>
+            SideCard
+            SideCard
 
-        Footer --> Footer.jsx --> <footer>
+    Footer --> Footer.jsx --> <footer>

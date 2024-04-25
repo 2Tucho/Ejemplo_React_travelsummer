@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 const FormContact = ({ setMessage }) => {
   const inputValue = useRef(); //Usamos la referencia para acceder al valor del input

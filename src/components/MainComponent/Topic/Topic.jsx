@@ -5,20 +5,21 @@ const Topic = () => {
 
   const [value, setValue] = useState(""); // Para guardar el dato a buscar
   const [posts, setPosts] = useState([]); // Para guardar los posts
-  
+
   // equivale a un componentDidUpdate()
   useEffect(() => {
     async function fetchData() {
-      try{
+      try {
         // Petición HTTP
         const res = await axios.get(`https://www.reddit.com/r/${value}.json`);
         const json = res.data;
 
         // Guarda en el array de posts el resultado. Procesa los datos
         setPosts(json.data.children.map(c => c.data));
-      }catch(e){
+      } catch (e) {
         setPosts([]) // No pintes nada 
       }
+      
     }
 
     fetchData();
@@ -32,21 +33,21 @@ const Topic = () => {
   };
 
 
-  return    <section>
-              <h1>Topic</h1>
-              <form onSubmit={handleSubmit}>
-                <input name="topic"/>
-              </form>
+  return <section>
+    <h1>Topic</h1>
+    <form onSubmit={handleSubmit}>
+      <input name="topic" />
+    </form>
 
-              {posts.length!==0?
-                                <ul className='topics'>
-                                  {posts.map(post => (
-                                    <li key={post.id}>{post.title}</li>
-                                  ))}
-                                </ul>
-                                :""
-              }
-            </section>
+    {posts.length !== 0 ?
+      <ul className='topics'>
+        {posts.map(post => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+      : ""
+    }
+  </section>
 };
 
 export default Topic;

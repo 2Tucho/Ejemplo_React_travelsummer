@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import React from 'react'
+import './styles/styles.css'
 import { BrowserRouter } from 'react-router-dom' //Pongo las etiquetas para que contengan los componentes que quiero enrutar
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 //import MainComponent from './MainComponent'
 import MainComponent from "./components/MainComponent"
